@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse a Number</title>
+    <title>Alphabetize String</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,26 +30,25 @@
 <body>
 
     <div class="container">
-        <h2>Reverse a Number</h2>
-        <input type="number" id="numberInput" placeholder="Enter a number">
-        <button onclick="reverseAndDisplay()">Reverse</button>
+        <h2>Alphabetize a String</h2>
+        <input type="text" id="textInput" placeholder="Enter a string">
+        <button onclick="alphabetizeAndDisplay()">Alphabetize</button>
         <h3 id="result"></h3>
     </div>
 
     <script>
-        function reverseNumber(num) {
-            const reversed = num.toString().split('').reverse().join('');
-            return parseInt(reversed, 10);
+        function alphabetizeString(str) {
+            return str.split('').sort().join('');
         }
 
-        function reverseAndDisplay() {
-            const input = document.getElementById("numberInput").value;
+        function alphabetizeAndDisplay() {
+            const input = document.getElementById("textInput").value;
             if (input === "") {
-                document.getElementById("result").innerText = "Please enter a number.";
+                document.getElementById("result").innerText = "Please enter a string.";
                 return;
             }
-            const reversedNum = reverseNumber(input);
-            document.getElementById("result").innerText = `Reversed Number: ${reversedNum}`;
+            const sortedString = alphabetizeString(input);
+            document.getElementById("result").innerText = `Alphabetized String: ${sortedString}`;
         }
     </script>
 
